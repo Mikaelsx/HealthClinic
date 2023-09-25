@@ -1,0 +1,40 @@
+Funcionalidades:
+1. O administrador poderá cadastrar qualquer tipo de usuário (administrador, paciente ou
+médico);
+2. O administrador poderá agendar uma consulta, onde será informado o paciente, data do
+agendamento e qual médico irá atender a consulta (o médico possuirá sua determinada
+especialidade);
+3. O administrador poderá cancelar o agendamento;
+4. O administrador deverá informar os dados da clínica (como endereço, horário de
+funcionamento, CNPJ, nome fantasia e razão social);
+5. O médico poderá ver os agendamentos (consultas) associados a ele;
+
+6. O médico poderá incluir a descrição da consulta que estará vinculada ao paciente
+(prontuário);
+7. O paciente poderá visualizar suas próprias consultas;
+
+--------------------------------------------------------------------------------------------
+
+ADMINISTRADOR
+
+tem acesso ao crud completo de todas as telas
+- Cadastrar
+- Listar
+- Deletar
+- Atualizar
+
+Desc: O Administrador pode Cadastrar novos usuarios.
+Desc: O Administrador pode Cadastrar novas consultas e devera informar os dados da clinica.
+
+MÉDICO
+
+tem acesso parcial ao crud
+- Listar 
+- Cadastrar
+Desc: O Medico pode Listar as consultas.
+Desc: O Medico devera criar uma descrição (prontuário) em cada consulta.
+
+PACIENTE
+
+tem acesso mínimo ao crud
+- Listar
