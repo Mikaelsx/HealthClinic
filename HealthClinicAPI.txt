@@ -38,3 +38,42 @@ PACIENTE
 
 tem acesso mínimo ao crud
 - Listar
+
+-------------------------------------------------------------------------------------------
+
+Tipos Usuario 
+Especialidade 
+Comentario  
+Usuario 
+Paciente 
+Clinica 
+Medico 
+Consulta 
+-------------------------------------------------------------------------------------------
+CONEXÃO
+
+dotnet build
+add-migration bd
+update-database - aqui
+-------------------------------------------------------------------------------------------
+Finalizado
+
+Domain 
+Utils
+ViewModels
+TiposUsuario
+Usuario
+
+
+
+
+{
+  "nome": "Mikael.S",
+  "email": "Mikael@gmail.com",
+  "senha": "1234",
+  "idTiposUsuario": "5e6347c8-291f-4c04-979c-aefc9992f8e8",
+  "tipoUsuario": {
+    "titulo": "Administrador"
+  }
+}
+
