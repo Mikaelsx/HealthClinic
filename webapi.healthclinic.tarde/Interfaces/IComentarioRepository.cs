@@ -8,6 +8,6 @@ namespace webapi.healthclinic.tarde.Interfaces
         void Deletar(Guid id);
         List<Comentario> Listar();
         Comentario BuscarPorId(Guid id);
-        void Atualizar(Guid id, Comentario comentario);
+        //void Atualizar(Guid id, Comentario comentario);
     }
 }

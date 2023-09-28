@@ -56,16 +56,15 @@ dotnet build
 add-migration bd
 update-database - aqui
 -------------------------------------------------------------------------------------------
-Finalizado
+// Funcionando
+Tipo de usuario
 
-Domain 
-Utils
-ViewModels
-TiposUsuario
+{
+  "titulo": "string"
+}
+
+// Funcionando
 Usuario
-
-
-
 
 {
   "nome": "Mikael.S",
@@ -77,3 +76,67 @@ Usuario
   }
 }
 
+// Funcionando
+Clinica
+
+  {
+    "idClinica": "35877a60-7df5-4844-8696-b8b0c20fa734",
+    "endereco": "Rua Niterói 180, São Caetano Do Sul",
+    "cnpj": "12434453      ",
+    "horario": "08:00 ás 18:00",
+    "nomeFantasia": "HealthClinic",
+    "razaoSocial": "AE Investimentos"
+  }
+
+
+// Funcionando
+Paciente 
+
+{
+  "cpf": "12345678910",
+  "idUsuario": "2fb0cbca-d17b-43ac-81cb-9accb681c989",
+  "usuario": {
+    "nome": "Mikael.S",
+    "email": "Mikaels@gmail.com",
+    "senha": "1234",
+    "idTiposUsuario": "8cc90423-35d1-4f3e-9357-3425d34538ce",
+    "tipoUsuario": {
+      "titulo": "Administrador"
+    }
+  }
+}
+
+// Funcionando
+Especialidade
+
+{
+  "tituloEspecialidade": "string"
+}
+
+
+// Falta alguns métodos
+Medico
+{
+  "crm": "crm/sp1332",
+  "idUsuario": "8b04f12f-0ecf-4e82-ae9e-6f33e6d06c56",
+  "tipoUsuario": {
+    "titulo": "Médico"
+  },
+  "idEspecialidade": "a29f707e-ab43-4b8c-8606-43b1d7dbff5c",
+  "especialidade": {
+    "tituloEspecialidade": "Psiquiatra"
+  },
+  "idClinica": "35877a60-7df5-4844-8696-b8b0c20fa734",
+  "clinica": {
+    "endereco": "Rua Niterói 180, São Caetano Do Sul",
+    "cnpj": "12434453      ",
+    "horario": "08:00 ás 18:00",
+    "nomeFantasia": "HealthClinic",
+    "razaoSocial": "AE Investimentos"
+  }
+}
+
+
+// Falha
+Comentario
+A consulta foi agradável e me senti bem logo após os exames.

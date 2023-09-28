@@ -11,9 +11,8 @@ namespace webapi.healthclinic.tarde.Domains
         public Guid IdComentario { get; set; } = Guid.NewGuid();
 
         // Feedback
-        [Column(TypeName = "VARCHAR(500)")]
+        [Column(TypeName = "VARCHAR(200)")]
         [Required(ErrorMessage = "Insira um Feedback válido.")]
-        [StringLength(50)]
         public string? Feedback { get; set; }
     }
 }

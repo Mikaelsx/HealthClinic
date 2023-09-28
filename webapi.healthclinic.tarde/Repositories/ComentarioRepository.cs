@@ -1,33 +1,53 @@
-﻿using webapi.healthclinic.tarde.Domains;
+﻿using webapi.healthclinic.tarde.Contexts;
+using webapi.healthclinic.tarde.Domains;
 using webapi.healthclinic.tarde.Interfaces;
 
 namespace webapi.healthclinic.tarde.Repositories
 {
     public class ComentarioRepository : IComentarioRepository
     {
-        public void Atualizar(Guid id, Comentario comentario)
+        private readonly HealthContext ctx;
+
+        public ComentarioRepository()
         {
-            throw new NotImplementedException();
+            ctx = new HealthContext();
         }
 
         public Comentario BuscarPorId(Guid id)
         {
-            throw new NotImplementedException();
+            return ctx.Comentarios.FirstOrDefault(e => e.IdComentario == id)!;
         }
 
         public void Cadastrar(Comentario comentario)
         {
-            throw new NotImplementedException();
+            try
+            {
+                ctx.Comentarios.Add(comentario);
+                ctx.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public void Deletar(Guid id)
         {
-            throw new NotImplementedException();
+            Comentario comentarioBuscado = ctx.Comentarios.Find(id)!;
+
+            if (comentarioBuscado != null)
+            {
+                ctx.Comentarios.Remove(comentarioBuscado);
+            }
+
+            ctx.SaveChanges();
         }
 
         public List<Comentario> Listar()
         {
-            throw new NotImplementedException();
+            return ctx.Comentarios.ToList();
         }
+
     }
 }

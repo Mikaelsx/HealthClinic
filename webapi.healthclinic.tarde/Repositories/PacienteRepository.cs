@@ -14,27 +14,59 @@ namespace webapi.healthclinic.tarde.Repositories
         }
         public void Atualizar(Guid id, Paciente paciente)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Paciente pacienteBuscado = ctx.Pacientes.Find(id)!;
+
+                if (pacienteBuscado != null)
+                {
+                    pacienteBuscado.CPF = paciente.CPF;
+                }
+
+                ctx.Pacientes.Update(pacienteBuscado!);
+
+                ctx.SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public Paciente BuscarPorId(Guid id)
         {
-            throw new NotImplementedException();
+            return ctx.Pacientes.FirstOrDefault(e => e.IdPaciente == id)!;
         }
 
         public void Cadastrar(Paciente paciente)
         {
-            throw new NotImplementedException();
+            try
+            {
+                ctx.Pacientes.Add(paciente);
+                ctx.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public void Deletar(Guid id)
         {
-            throw new NotImplementedException();
+            Paciente pacienteBuscado = ctx.Pacientes.Find(id)!;
+
+            if (pacienteBuscado != null)
+            {
+                ctx.Pacientes.Remove(pacienteBuscado);
+            }
+
+            ctx.SaveChanges();
         }
 
         public List<Paciente> Listar()
         {
-            throw new NotImplementedException();
+            return ctx.Pacientes.ToList();
         }
     }
 }

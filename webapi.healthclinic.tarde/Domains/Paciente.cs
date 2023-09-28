@@ -12,10 +12,9 @@ namespace webapi.healthclinic.tarde.Domains
         public Guid IdPaciente { get; set; } = Guid.NewGuid();
 
         // CPF
-        [Column(TypeName = "CHAR(14)")]
+        [Column(TypeName = "CHAR(11)")]
         [Required(ErrorMessage = "Insira um CPF válido.")]
-        [StringLength(11)]
-        public int? CPF { get; set; }
+        public string? CPF { get; set; }
 
         // FK TipoUsuario
         [Required(ErrorMessage = "O Tipo de usuario é obrigatório")]
